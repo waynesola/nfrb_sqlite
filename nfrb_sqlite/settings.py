@@ -52,7 +52,7 @@ COOKIES_ENABLED = False
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'nfrb_sqlite.middlewares.middlewares.RandomUserAgent': 1,
+    'nfrb_sqlite.middlewares.RandomUserAgent': 1,
 }
 
 # Enable or disable extensions

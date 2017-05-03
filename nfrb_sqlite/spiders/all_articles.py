@@ -72,7 +72,10 @@ class AllArticles(scrapy.Spider):
         item['link'] = response.url
         week = soup.find('li', class_="today").get_text()
         week = (re.sub('\s', '', week))[-3:]
-        publish = re.sub('/', '-', response.url[39:49]).format('YYYY-MM-DD') + ' ' + week + '  '
+        publish = re.sub('/', '-', response.url[39:49])
+        date = arrow.get(publish)
+        publish = date.format('YYYY') + u'年' + date.format('MM') + u'月' + date.format(
+            'DD') + u'日' + ' ' + week + '  '
         publish += soup.find('div', class_="left side").find('h3').find('a').get_text()
         item['publish'] = publish
         yield item

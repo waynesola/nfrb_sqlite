@@ -75,7 +75,7 @@ class AllArticles(scrapy.Spider):
         publish = re.sub('/', '-', response.url[39:49])
         date = arrow.get(publish)
         publish = date.format('YYYY') + u'年' + date.format('MM') + u'月' + date.format(
-            'DD') + u'日' + ' ' + week + '  '
+            'DD') + u'日' + '  ' + week + '  '
         publish += soup.find('div', class_="left side").find('h3').find('a').get_text()
         item['publish'] = publish
         yield item

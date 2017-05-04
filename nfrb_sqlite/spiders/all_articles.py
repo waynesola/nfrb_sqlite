@@ -14,7 +14,8 @@ class AllArticles(scrapy.Spider):
     name = "all"
     allowed_domains = ["epaper.southcn.com"]
     start_urls = [
-        "http://epaper.southcn.com"
+        # "http://epaper.southcn.com"
+        "http://epaper.southcn.com/nfdaily/"
     ]
 
     # 爬取指定日期的报纸，只需修改 start 和 end 参数即可。

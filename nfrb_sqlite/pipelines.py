@@ -8,7 +8,6 @@ import sqlite3
 class NfrbSqlitePipeline(object):
     def process_item(self, item, spider):
         if item.__class__ == NfrbSqliteItem:  # 此句非必要，在多个items时可能需要用到
-            # conn = sqlite3.connect('C:/Program Files/DB Browser for SQLite/database/nfrb.db')
             conn = sqlite3.connect('C:/Program Files/DB Browser for SQLite/database/test.db')
             cur = conn.cursor()
             sql = "insert into mytable(title,publish,link,text) values (?,?,?,?)"
